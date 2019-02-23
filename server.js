@@ -77,7 +77,7 @@ app.get('/verification/:email',(req,res)=>{
 })
 
 app.post('/login',(req,res)=>{
-    perma.findOne({email:req.body.email},{Password:true}).then(user=>{
+    perma.findOne({Email:req.body.Email},{Password:true}).then(user=>{
         if(req.body.Password === user.Password)
             res.status(200).json("LoggedIn");
         else
